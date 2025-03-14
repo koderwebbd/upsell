@@ -13,7 +13,7 @@ class VariantSelectsUpsell extends HTMLElement {
     //this.removeErrorMessage();
     this.updateVariantStatuses();
 
-    if (!this.currentVariant) {
+    /*if (!this.currentVariant) {
       //this.toggleAddButton(true, '', true);
       //this.setUnavailable();
     } else {
@@ -22,7 +22,15 @@ class VariantSelectsUpsell extends HTMLElement {
       this.updateVariantInput();
       //this.renderProductInfo();
       //this.updateShareUrl();
+    }*/
+
+    if (!this.currentVariant || this.currentVariant.available === false) {  
+        this.toggleAddButton(true, '', true);
+    } else {
+        this.updateVariantInput();
+        this.toggleAddButton(false, '', true);
     }
+     
   }
 
   updateOptions() {
